@@ -1,7 +1,3 @@
-<h1 align="center">
-    <img alt="FicandoOnline" title="#FicandoOnline" src=".images/header.jpg" width="100%" />
-</h1>
-
 <h4 align="center"> 
 	AluraHub 
 </h4>
@@ -58,8 +54,7 @@ $ npm install
 $ expo start
 ```
 
-
-Espero que você utilize ao máximo deste projeto para se aprimorar! E se quiser dar um salve, estou lá no LinkedIn [André Oliveira Cunha](https://www.linkedin.com/in/andr%C3%A9-oliveira-cunha-b26b3a156/). :wave: 
+LinkedIn do Profissional que ensinou a criação deste projeto: [André Oliveira Cunha](https://www.linkedin.com/in/andr%C3%A9-oliveira-cunha-b26b3a156/).
 
 [nodejs]: https://nodejs.org/
 [expo]: https://docs.expo.dev/
