@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Text, View, Image, TouchableOpacity, TextInput, Alert, ScrollView } from 'react-native';
-import estilos from './estilos';
-import api from '../../servicos/api';
+import estilos from './estilos'
 import { buscaUsuario } from "../../servicos/requisicoes/usuarios";
 
 export default function Principal({ navigation }) {
@@ -9,14 +8,19 @@ export default function Principal({ navigation }) {
     const [usuario, setUsuario] = useState({});
 
     async function busca(){
-        const resultado = await buscaUsuario(nomeUsuario)
+        if (!nomeUsuario.trim()) {
+            Alert.alert('Por favor, insira um nome de usuário.');
+            return;
+        }
+
+        const resultado = await buscaUsuario(nomeUsuario);
 
         setNomeUsuario('')
         if (resultado) {
             setUsuario(resultado);
         } else {
-            Alert.alert('Usuário não encontrado!')
-            setUsuario({})
+            Alert.alert('Usuário não encontrado!');
+            setUsuario({});
         }
     }
 
@@ -42,7 +46,7 @@ export default function Principal({ navigation }) {
                                 <Text style={estilos.seguidoresTexto}>Seguindo</Text>
                             </View>
                         </View>
-                        <TouchableOpacity onPress={() => navigation.navigate('Repositorios')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Repositorios', {id:usuario.id})}>
                             <Text style={estilos.repositorios}>
                                 Ver os Repositórios
                             </Text>

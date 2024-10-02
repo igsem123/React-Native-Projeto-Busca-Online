@@ -31,6 +31,11 @@ const estilos = StyleSheet.create({
         borderRadius: 8,
         height: 44,
         width: '90%',
+    },
+    titulo: {
+        fontWeight: 'semibold',
+        fontSize: 26,
+        color: '#8A07DA',
     }
 });
 

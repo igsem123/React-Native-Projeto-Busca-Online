@@ -8,6 +8,7 @@ export default function CriarRepositorio({ route, navigation }) {
 
     return (
         <View style={estilos.container}>
+            <Text style={estilos.titulo}>Novo Repositório:</Text>
             <TextInput
                 placeholder="Nome do Repositório"
                 autoCapitalize="none"
