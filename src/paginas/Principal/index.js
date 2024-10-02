@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Text, View, Image, TouchableOpacity, TextInput, Alert, ScrollView } from 'react-native';
+import { Text, View, Image, TouchableOpacity, TextInput, Alert, ScrollView} from 'react-native';
 import estilos from './estilos'
 import { buscaUsuario } from "../../servicos/requisicoes/usuarios";
+import logoImage from '../../assets/Git-Icon.png'
 
 export default function Principal({ navigation }) {
     const [nomeUsuario, setNomeUsuario] = useState('');
@@ -27,10 +28,11 @@ export default function Principal({ navigation }) {
     return (
         <ScrollView>
             <View style={estilos.container}>
+                <Image source={logoImage} style={estilos.logo} />
                 {
                     usuario?.login &&
                     <>
-                        <View style={estilos.fundo} />
+                        <View style={estilos.fundo}/>
                         <View style={estilos.imagemArea}>
                             <Image source={{ uri: usuario.avatar_url }} style={estilos.imagem} />
                         </View>
@@ -61,13 +63,12 @@ export default function Principal({ navigation }) {
                     value={nomeUsuario}
                     onChangeText={setNomeUsuario}
                 />
-                <TouchableOpacity style={estilos.botao}
-                                  onPress={busca}
-                >
+                <TouchableOpacity style={estilos.botao} onPress={busca}>
                     <Text style={estilos.textoBotao}>
                         Buscar
                     </Text>
                 </TouchableOpacity>
+
             </View>
         </ScrollView>
     );

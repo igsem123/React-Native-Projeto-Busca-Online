@@ -8,10 +8,21 @@ const estilos = StyleSheet.create({
         justifyContent: 'center',
     },
     repositoriosTexto: {
-        fontSize: 21,
-        fontWeight: '600',
-        color: '#45565F',
-        marginTop: 20,
+        fontSize: 26,
+        fontWeight: 'semibold',
+        color: '#8A07DA',
+        marginTop: 10,
+    },
+    entrada: {
+        borderWidth: 2,
+        borderColor: '#ddd',
+        paddingHorizontal: 20,
+        fontSize: 16,
+        color: '#444',
+        marginTop: 25,
+        borderRadius: 8,
+        height: 44,
+        width: '90%',
     },
     titulo: {
         fontSize: 20,
@@ -40,8 +51,8 @@ const estilos = StyleSheet.create({
     },
     botao: {
         backgroundColor: '#8A07DA',
-        marginTop: 20,
-        marginBottom: 30,
+        marginTop: 25,
+        marginBottom: 10,
         padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -52,6 +63,11 @@ const estilos = StyleSheet.create({
         fontSize: 16,
         color: '#FFF',
     },
+    logo: {
+        marginTop: 15,
+        width: 100,
+        height: 100
+    }
 });
 
 
