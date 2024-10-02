@@ -16,7 +16,7 @@ export default function Rotas() {
                 <Tab.Screen name="Principal" options={{ title: "Perfil" }} component={Principal} />
                 <Tab.Screen name="Repositorios" component={Repositorios} />
                 <Tab.Screen name="CriarRepositorio" options={{ title: "Criar Repositório" }} component={CriarRepositorio} />
-                <Tab.Screen name="InfoRepositorio" options={{ title: "Repositório Info" }} component={InfoRepositorio} />
+                <Tab.Screen name="InfoRepositorio" options={{ title: "Informações dos Repositórios" }} component={InfoRepositorio} />
             </Tab.Navigator>
         </NavigationContainer>
     );

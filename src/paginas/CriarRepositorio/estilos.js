@@ -36,6 +36,11 @@ const estilos = StyleSheet.create({
         fontWeight: 'semibold',
         fontSize: 26,
         color: '#8A07DA',
+    },
+    logo: {
+        width: 100,
+        height: 100,
+        marginBottom:15,
     }
 });
 

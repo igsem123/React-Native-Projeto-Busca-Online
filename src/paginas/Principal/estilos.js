@@ -5,7 +5,6 @@ const estilos = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fafafa',
         alignItems: 'center',
-        marginBottom: 20,
     },
     botao: {
         backgroundColor: '#8A07DA',
@@ -35,21 +34,27 @@ const estilos = StyleSheet.create({
     imagemArea: {
         alignItems: 'center',
         justifyContent: 'center',
-        width: 150,
-        height: 150,
-        borderRadius: 75,
+        width: 130,
+        height: 130,
+        borderRadius: 100,
         marginTop: -75,
-        backgroundColor: '#FFF',
+        backgroundColor: '#fafafa',
     },
     imagem: {
         width: 120,
         height: 120,
-        borderRadius: 60,
+        borderRadius: 60
+    },
+    logo: {
+        width: '100%',
+        height: 200,
+        resizeMode: 'contain',
+        backgroundColor: '#EEEEEE'
     },
     fundo: {
-        backgroundColor: '#C4C4C4',
+        backgroundColor: '#EEEEEE',
         width: '100%',
-        height: 156,
+        marginTop: 35,
     },
     textoNome: {
         fontSize: 21,
@@ -63,7 +68,6 @@ const estilos = StyleSheet.create({
         marginTop: 5,
     },
     seguidoresArea: {
-        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
@@ -84,7 +88,7 @@ const estilos = StyleSheet.create({
     repositorios: {
         color: '#8A07DA',
         fontSize: 15,
-        fontWeight: '400',
+        fontWeight: '400'
     }
 });
 
