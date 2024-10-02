@@ -15,6 +15,7 @@ export default function Principal({ navigation }) {
         }
 
         const resultado = await buscaUsuario(nomeUsuario);
+        console.log(resultado)
 
         setNomeUsuario('')
         if (resultado) {
@@ -37,7 +38,27 @@ export default function Principal({ navigation }) {
                             <Image source={{ uri: usuario.avatar_url }} style={estilos.imagem} />
                         </View>
                         <Text style={estilos.textoNome}>{usuario.name}</Text>
-                        <Text style={estilos.textoEmail}>{usuario.email}</Text>
+                        { usuario?.bio &&
+                            <Text style={estilos.bioTexto}>{usuario.bio}</Text>
+                        }
+                        { usuario?.email &&
+                            <Text style={estilos.textoEmail}>{usuario.email}</Text>
+                        }
+                        <View style={estilos.infoArea}>
+                            { usuario?.company &&
+                                <View style={estilos.areaInfo}>
+
+                                    <Text style={estilos.textoInfoArea}>{usuario.company}</Text>
+                                    <Text style={estilos.areaInfo}>Empresa</Text>
+                                </View>
+                            }
+                            { usuario?.location &&
+                                <View style={estilos.areaInfo}>
+                                    <Text style={estilos.textoInfoArea}>{usuario.location}</Text>
+                                    <Text style={estilos.areaInfo}>Localidade</Text>
+                                </View>
+                            }
+                        </View>
                         <View style={estilos.seguidoresArea}>
                             <View style={estilos.seguidores}>
                                 <Text style={estilos.seguidoresNumero}>{usuario.followers}</Text>

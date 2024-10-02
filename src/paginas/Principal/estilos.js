@@ -9,6 +9,7 @@ const estilos = StyleSheet.create({
     botao: {
         backgroundColor: '#8A07DA',
         marginTop: 20,
+        marginBottom: 20,
         padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -89,6 +90,25 @@ const estilos = StyleSheet.create({
         color: '#8A07DA',
         fontSize: 15,
         fontWeight: '400'
+    },
+    infoArea: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+    },
+    textoInfoArea: {
+        color: '#8A07DA',
+        fontSize: 17,
+        fontWeight: '400',
+        margin: 15,
+    },
+    areaInfo: {
+        alignItems: 'center',
+        color: '#95A8B2',
+    },
+    bioTexto: {
+        justifyContent: 'center',
+        textAlign: 'justify'
     }
 });
 
