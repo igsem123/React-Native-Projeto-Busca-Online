@@ -1,8 +1,8 @@
 import api from "../api";
 
-export async function pegarRepositoriosDoUsuario(id) {
+export async function pegarRepositoriosDoUsuario(login) {
     try {
-        const resultado = await api.get(`/repos?postId=${id}`);
+        const resultado = await api.get(`/users/${login}/repos`);
         return resultado.data;
     } catch (error) {
         console.log(error);
@@ -49,12 +49,16 @@ export async function deletarRepositoriosDoUsuario(id) {
     }
 }
 
-export async function buscaRepositorios(nomeRepositorio) {
+export async function buscaRepositorios(login, name) {
     try {
-        const resultado = await api.get(`/repos?name=${nomeRepositorio}`);
-        return resultado.data;
+        const resultado = await api.get(`/users/${login}/repos`);
+        const repositorios = resultado.data;
+
+        // Filtrar os repositórios pelo nome
+        const repositoriosFiltrados = repositorios.filter(repo => repo.name.includes(name));
+        return repositoriosFiltrados;
     } catch (error) {
         console.log(error);
-        return []
+        return [];
     }
 }
