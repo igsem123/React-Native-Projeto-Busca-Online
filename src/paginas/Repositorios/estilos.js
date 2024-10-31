@@ -33,7 +33,7 @@ const estilos = StyleSheet.create({
     },
     repositorio: {
         width: '100%',
-        height: 80,
+        height: 140,
         backgroundColor: '#FFF',
         borderBottomWidth: 1,
         borderBottomColor: '#ddd',
@@ -46,6 +46,10 @@ const estilos = StyleSheet.create({
         fontWeight: 'bold',
     },
     repositorioData: {
+        fontSize: 14,
+        color: '#999',
+    },
+    repositorioLanguage: {
         fontSize: 14,
         color: '#999',
     },

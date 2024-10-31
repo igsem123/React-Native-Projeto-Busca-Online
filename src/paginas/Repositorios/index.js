@@ -5,6 +5,7 @@ import estilos from './estilos';
 import {buscaRepositorios, pegarRepositoriosDoUsuario} from "../../servicos/requisicoes/repositorios";
 import {useIsFocused} from "@react-navigation/native";
 import logoImage from '../../assets/Git-Logo.png'
+import {format} from "date-fns";
 
 export default function Repositorios({ route, navigation }) {
     const [repo, setRepo] = useState([]);
@@ -13,7 +14,7 @@ export default function Repositorios({ route, navigation }) {
 
     useEffect(() => {
         async function carregarRepositorios() {
-            const resultado = await pegarRepositoriosDoUsuario(route.params.id);
+            const resultado = await pegarRepositoriosDoUsuario(route.params.login);
             if (resultado && Array.isArray(resultado)) {
                 setRepo(resultado);
             } else {
@@ -29,7 +30,7 @@ export default function Repositorios({ route, navigation }) {
             return;
         }
 
-        const resultado = await buscaRepositorios(nomeRepositorio.trim());
+        const resultado = await buscaRepositorios(route.params.login, nomeRepositorio.trim());
         setNomeRepositorio('');  // Limpar o campo de busca após a tentativa
 
         if (resultado) {
@@ -67,14 +68,16 @@ export default function Repositorios({ route, navigation }) {
             <FlatList
                 data={repo}
                 style={{ width: '100%', marginTop: 25 }}
-                keyExtractor={item => item.id}
+                keyExtractor={repo => repo.id}
                 renderItem={({ item }) => (
                     <TouchableOpacity
                         style={estilos.repositorio}
                         onPress={() => navigation.navigate('InfoRepositorio', { item })}
                     >
                         <Text style={estilos.repositorioNome}>{item.name}</Text>
-                        <Text style={estilos.repositorioData}>Atualizado em {item.data}</Text>
+                        <Text style={estilos.repositorioData}>Atualizado em {format (new Date(item.created_at), 'dd/MM/yyyy')}</Text>
+                        <Text style={estilos.repositorioLanguage}>Linguagem utilizada {item.language}</Text>
+                        <Text style={estilos.repositorioLanguage}>Descrição: {item.description}</Text>
                     </TouchableOpacity>
                 )}
             />

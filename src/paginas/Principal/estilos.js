@@ -108,7 +108,7 @@ const estilos = StyleSheet.create({
     },
     bioTexto: {
         justifyContent: 'center',
-        textAlign: 'justify'
+        textAlign: 'center'
     }
 });
 
